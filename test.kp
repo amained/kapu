@@ -1,0 +1,14 @@
+@import("std");
+
+# 69 nice
+func test(asdf: int): int {
+    if (asdf <= 6)
+        return 9;
+    elif (asdf <= 9)
+        return 6;
+    return 69;
+}
+func main(): int {
+    var a: int = 0;
+    return test(a);
+}

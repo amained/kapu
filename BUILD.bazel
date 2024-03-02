@@ -1,0 +1,34 @@
+cc_binary(
+    name = "kapuc",
+    srcs = [
+        "lib/log.c",
+        "lib/log.h",
+        "lib/sds.c",
+        "lib/sds.h",
+        "lib/sdsalloc.h",
+        "lib/stb_ds.h",
+        "src/kapuc/helper.h",
+        "src/kapuc/lex.c",
+        "src/kapuc/lex.h",
+        "src/kapuc/main.c",
+        "src/kapuc/parse.c",
+        "src/kapuc/parse.h",
+    ],
+    copts = [
+        "-O3",
+    ],
+)
+
+cc_test(
+    name = "kapuc_test",
+    srcs = [
+        "test/kapuc/lex_test.cpp",
+    ],
+    deps = [
+        ":kapuc",
+        "@com_google_googletest//:gtest_main",
+    ],
+    copts = [
+    	"-O3"
+    ],
+)
